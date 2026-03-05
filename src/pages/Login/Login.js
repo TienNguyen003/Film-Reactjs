@@ -42,7 +42,7 @@ export default function Login() {
                                         Login Now
                                     </button>
                                 </form>
-                                <a href="#" className={cx('forget_pass')}>
+                                <a href="/forgot" className={cx('forget_pass')}>
                                     Forgot Your Password?
                                 </a>
                             </div>
@@ -63,18 +63,18 @@ export default function Login() {
                                     <span>or</span>
                                     <ul>
                                         <li>
-                                            <a href="#" className={cx('facebook')}>
+                                            <a href="/facebook" className={cx('facebook')}>
                                                 <i className={cx('fa fa-facebook')}></i> Sign in With Facebook
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" className={cx('google')}>
+                                            <a href="/google" className={cx('google')}>
                                                 <i className={cx('fa fa-google')}></i>
                                                 Sign in With Google
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" className={cx('twitter')}>
+                                            <a href="/twitter" className={cx('twitter')}>
                                                 <i className={cx('fa fa-twitter')}></i> Sign in With Twitter
                                             </a>
                                         </li>

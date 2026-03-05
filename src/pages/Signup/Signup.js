@@ -33,7 +33,6 @@ export default function Signup() {
                                         <input type="password" placeholder="Mật khẩu" />
                                         <span class="icon_lock"></span>
                                     </div>
-                                    <h5></h5>
                                     <div id="example3"></div>
                                     <br />
                                     <button type="submit" class="site-btn">

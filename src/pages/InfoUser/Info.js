@@ -18,6 +18,7 @@ export default function Info() {
                                         className="mycred-badge-image badge-level3"
                                         width="100"
                                         height="100"
+                                        alt=''
                                     />
                                 </div>
                             </div>
