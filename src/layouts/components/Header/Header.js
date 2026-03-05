@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames/bind';
 
 import images from '~/assets';
@@ -8,6 +8,36 @@ import routes from '~/config/routes';
 const cx = classNames.bind(styles);
 
 export default function Header() {
+    useEffect(() => {
+        let retryTimer;
+        let retries = 0;
+
+        const initMobileMenu = () => {
+            const $ = window.$ || window.jQuery;
+            if (!$ || !$.fn || !$.fn.slicknav) {
+                if (retries < 20) {
+                    retries += 1;
+                    retryTimer = setTimeout(initMobileMenu, 200);
+                }
+                return;
+            }
+
+            if ($('#mobile-menu-wrap .slicknav_menu').length) return;
+
+            $('#mobile-menu-wrap').empty();
+            $('.mobile-menu').slicknav({
+                prependTo: '#mobile-menu-wrap',
+                allowParentLinks: true,
+            });
+        };
+
+        initMobileMenu();
+
+        return () => {
+            if (retryTimer) clearTimeout(retryTimer);
+        };
+    }, []);
+
     const genresFilm = [
         {
             title: 'Phim Mới',
@@ -71,7 +101,7 @@ export default function Header() {
                     </div>
                     <div className={cx('pc-8')}>
                         <div className={cx('header__nav')}>
-                            <nav className={cx('header__menu', 'mobile-menu')}>
+                            <nav className={`${cx('header__menu')} mobile-menu`}>
                                 <ul>
                                     <li className={cx('pc-2')}>
                                         <a href="/">Trang chủ</a>
