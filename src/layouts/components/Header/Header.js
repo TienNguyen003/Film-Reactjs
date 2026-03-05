@@ -71,7 +71,7 @@ export default function Header() {
                     </div>
                     <div className={cx('pc-8')}>
                         <div className={cx('header__nav')}>
-                            <nav className={cx('header__menu')}>
+                            <nav className={cx('header__menu', 'mobile-menu')}>
                                 <ul>
                                     <li className={cx('pc-2')}>
                                         <a href="/">Trang chủ</a>
@@ -118,7 +118,7 @@ export default function Header() {
                             <a href="/favmovie" title="Yêu thích">
                                 <i className={cx('fa-solid fa-bookmark')}></i>
                             </a>
-                            <a href='#'>
+                            <a href="#">
                                 <i className={cx('fa-solid fa-magnifying-glass')}></i>
                             </a>
                             <a href={routes.login}>
