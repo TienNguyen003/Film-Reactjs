@@ -16,7 +16,7 @@ function App() {
 
     return (
         <Router>
-            <Load />
+            {/* <Load /> */}
             {isValidPath(window.location.pathname) && <Header />}
             <div className="App">
                 <Routes>
