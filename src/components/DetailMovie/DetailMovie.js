@@ -220,7 +220,7 @@ export default function DetailMovie() {
                                         <div className={cx('anime__review__item')}>
                                             <div className={cx('anime__review__item__pic')}>
                                                 <img
-                                                    src="http://res.cloudinary.com/dwn20guz0/image/upload/v1714118761/avatarUser/618f083c61a7460ce0a6064319af41bd_dthlvw.gif"
+                                                    src="https://res.cloudinary.com/dwn20guz0/image/upload/v1714118761/avatarUser/618f083c61a7460ce0a6064319af41bd_dthlvw.gif"
                                                     alt=""
                                                 />
                                                 <img src="/img/avatar/khung.gif" alt="" className={cx('frame_avatar')} />
@@ -250,7 +250,7 @@ export default function DetailMovie() {
                                         <div className={cx('anime__review__item')}>
                                             <div className={cx('anime__review__item__pic')}>
                                                 <img
-                                                    src="http://res.cloudinary.com/dwn20guz0/image/upload/v1714118761/avatarUser/618f083c61a7460ce0a6064319af41bd_dthlvw.gif"
+                                                    src="https://res.cloudinary.com/dwn20guz0/image/upload/v1714118761/avatarUser/618f083c61a7460ce0a6064319af41bd_dthlvw.gif"
                                                     alt=""
                                                 />
                                                 <img src="/img/avatar/khung.gif" alt="" className={cx('frame_avatar')} />
@@ -280,7 +280,7 @@ export default function DetailMovie() {
                                         <div className={cx('anime__review__item')}>
                                             <div className={cx('anime__review__item__pic')}>
                                                 <img
-                                                    src="http://res.cloudinary.com/dwn20guz0/image/upload/v1714118761/avatarUser/618f083c61a7460ce0a6064319af41bd_dthlvw.gif"
+                                                    src="https://res.cloudinary.com/dwn20guz0/image/upload/v1714118761/avatarUser/618f083c61a7460ce0a6064319af41bd_dthlvw.gif"
                                                     alt=""
                                                 />
                                                 <img src="/img/avatar/khung.gif" alt="" className={cx('frame_avatar')} />

@@ -7,7 +7,10 @@ export default function Info() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4 infoAccount">
-                            <img src="http://res.cloudinary.com/dwn20guz0/image/upload/v1714118761/avatarUser/618f083c61a7460ce0a6064319af41bd_dthlvw.gif" className="img__myAccount" />
+                            <img
+                                src="https://res.cloudinary.com/dwn20guz0/image/upload/v1714118761/avatarUser/618f083c61a7460ce0a6064319af41bd_dthlvw.gif"
+                                className="img__myAccount"
+                            />
                             <label htmlFor="avatarInput">
                                 <span>Thay đổi avatar</span>
                             </label>
@@ -18,7 +21,7 @@ export default function Info() {
                                         className="mycred-badge-image badge-level3"
                                         width="100"
                                         height="100"
-                                        alt=''
+                                        alt=""
                                     />
                                 </div>
                             </div>
