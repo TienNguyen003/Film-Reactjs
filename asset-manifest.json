@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/FilmReact/static/css/main.b8040c7a.css",
+    "main.js": "/FilmReact/static/js/main.71c9d8e0.js",
+    "static/js/787.b6d9c22f.chunk.js": "/FilmReact/static/js/787.b6d9c22f.chunk.js",
+    "static/media/ProximaNova-Semibold.woff2": "/FilmReact/static/media/ProximaNova-Semibold.db7972dbe0b808f96bae.woff2",
+    "static/media/normal-breadcrumb.jpg": "/FilmReact/static/media/normal-breadcrumb.6bb7f027c0c2674cee05.jpg",
+    "static/media/sofiapro-bold.woff": "/FilmReact/static/media/sofiapro-bold.086ed00f3060992f2938.woff",
+    "static/media/Proxima-Nova-Bold.woff": "/FilmReact/static/media/Proxima-Nova-Bold.6cd7dcaa6293ecf61e80.woff",
+    "static/media/Proxima-Nova-Regular.woff2": "/FilmReact/static/media/Proxima-Nova-Regular.6c83037ae28747e6d774.woff2",
+    "index.html": "/FilmReact/index.html",
+    "main.b8040c7a.css.map": "/FilmReact/static/css/main.b8040c7a.css.map",
+    "main.71c9d8e0.js.map": "/FilmReact/static/js/main.71c9d8e0.js.map",
+    "787.b6d9c22f.chunk.js.map": "/FilmReact/static/js/787.b6d9c22f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8040c7a.css",
+    "static/js/main.71c9d8e0.js"
+  ]
+}
