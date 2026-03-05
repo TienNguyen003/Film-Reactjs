@@ -9,10 +9,11 @@ const cx = classNames.bind(styles);
 export default function WatchMovie() {
     const path = window.location.pathname.replace('/watch/', '');
     const urlParams = new URLSearchParams(window.location.search);
-    const episode = urlParams.get('episodes') || 1;
+    const episode = urlParams.get('episodes') || 'full';
 
     const [episodes, setEpisodes] = useState([]);
     const [films, setFilms] = useState([]);
+    const [currentVideo, setCurrentVideo] = useState(null);
 
     const getFilms = async () => {
         try {
@@ -30,11 +31,30 @@ export default function WatchMovie() {
             const data = await response.json();
             if (data.status) {
                 setEpisodes(data.episodes[0].server_data);
-
                 document.title = 'Phim 24h | ' + data.movie.name;
             }
         } catch (error) {
             console.log(error);
+        }
+    };
+
+    const handleEpisodeChange = (episodeSlug) => {
+        window.location.href = `/watch/${path}?episodes=${episodeSlug}`;
+    };
+
+    const handlePrevEpisode = (e) => {
+        e.preventDefault();
+        const currentIndex = episodes.findIndex((ep) => ep.slug == episode);
+        if (currentIndex > 0) {
+            handleEpisodeChange(episodes[currentIndex - 1].slug);
+        }
+    };
+
+    const handleNextEpisode = (e) => {
+        e.preventDefault();
+        const currentIndex = episodes.findIndex((ep) => ep.slug == episode);
+        if (currentIndex < episodes.length - 1) {
+            handleEpisodeChange(episodes[currentIndex + 1].slug);
         }
     };
 
@@ -44,6 +64,13 @@ export default function WatchMovie() {
             await getFilms();
         })();
     }, []);
+
+    useEffect(() => {
+        if (episodes.length > 0) {
+            const current = episodes.find((ep) => ep.slug == episode) || episodes[0];
+            setCurrentVideo(current);
+        }
+    }, [episodes, episode]);
 
     return (
         <>
@@ -66,11 +93,13 @@ export default function WatchMovie() {
                     <div className={cx('row')}>
                         <div className={cx('pc-12')}>
                             <div className={cx('anime__video__player')}>
-                                <div id="dplayer">{episodes.map((item, index) => item.slug == episode)}</div>
-                                <a href="#" id="iconFilm" className={cx('prevEps')}>
+                                {currentVideo && currentVideo.link_embed && (
+                                    <iframe src={currentVideo.link_embed} style={{ width: '100%', height: '500px', border: 'none' }} allowFullScreen title="Video Player" />
+                                )}
+                                <a href="#" id="iconFilm" className={cx('prevEps')} onClick={handlePrevEpisode}>
                                     <i className={cx('fa fa-angle-double-left')}></i> Tập trước
                                 </a>
-                                <a href="#" id="iconFilm" className={cx('nextEsp')}>
+                                <a href="#" id="iconFilm" className={cx('nextEsp')} onClick={handleNextEpisode}>
                                     Tập tiếp theo <i className={cx('fa fa-angle-double-right')}></i>
                                 </a>
                                 <a id="iconFilm" className={cx('lightToggle')}>
@@ -86,8 +115,8 @@ export default function WatchMovie() {
                                 </div>
                                 <div className={cx('episodes')}>
                                     {episodes.map((item, index) => (
-                                        <a key={index} href="#">
-                                            {item.slug}
+                                        <a key={index} href={`/watch/${path}?episodes=${item.slug}`} className={item.slug == episode ? cx('active') : ''}>
+                                            {item.name}
                                         </a>
                                     ))}
                                 </div>
