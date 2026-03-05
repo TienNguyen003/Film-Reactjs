@@ -7,7 +7,6 @@ const cx = classNames.bind(styles);
 
 export default function Error() {
     useEffect(() => {
-        let arr = [];
         let container = document.querySelector(`.${cx('container-star')}`);
         for (let i = 0; i < 30; i++) {
             let star = document.createElement('div');
