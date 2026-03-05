@@ -1,0 +1,19 @@
+.rs-pagination-group{
+    justify-content: center;
+}
+
+.rs-pagination {
+    color: #ff0000;
+}
+
+.rs-pagination .rs-pagination-btn {
+    color: #fff;
+}
+
+.rs-pagination .rs-pagination-btn:hover {
+    background-color: #b0aeae;
+    color: #000;
+}
+.rs-pagination-group-skip{
+    color: #fff;
+}
